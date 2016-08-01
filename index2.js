@@ -22,3 +22,20 @@ function reject(array, iteratorFunction) {
   	return (! iteratorFunction(item))
   })
 }
+
+//find
+
+var ladders = [
+  { id: 1, height: 20 },
+  { id: 3, height: 25 }
+];
+
+function findWhere(array, criteria) {
+    var property = Object.keys(criteria);
+    return array.find(function (item) {
+        return item[property] === criteria[property]
+    })
+};
+
+
+findWhere(ladders, { height: 25 }); // result: { id:3, height: 25 }
