@@ -25,3 +25,28 @@ function handlePosts() {
     	savePost(post);
     })
 }
+
+
+
+var images = [
+  { height: 10, width: 30 },
+  { height: 20, width: 90 },
+  { height: 54, width: 32 }
+];
+var areas = [];
+
+images.forEach(function(image) {
+    areas.push(image.height*image.width)
+})
+
+// map Helper
+
+var paints = [ { color: 'red' }, { color: 'blue' }, { color: 'yellow' }];
+
+function pluck(array, property) {
+    return array.map(function(item) {
+        return item[property]
+    })
+}
+
+pluck(paints, 'color'); // returns ['red', 'yellow', 'blue'];
