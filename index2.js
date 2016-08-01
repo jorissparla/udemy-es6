@@ -39,3 +39,25 @@ function findWhere(array, criteria) {
 
 
 findWhere(ladders, { height: 25 }); // result: { id:3, height: 25 }
+
+// every and some
+
+var users = [
+  { id: 21, hasSubmitted: true },
+  { id: 62, hasSubmitted: false },
+  { id: 4, hasSubmitted: true }
+];
+
+users.every(function(user) {
+    return user.hasSubmitted;
+});
+
+var requests = [
+  { url: '/photos', status: 'complete' },
+  { url: '/albums', status: 'pending' },
+  { url: '/users', status: 'failed' }
+];
+
+var inProgress = requests.some(function(request) {
+    return request.status === 'pending'
+});
