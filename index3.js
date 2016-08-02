@@ -1,4 +1,29 @@
 // reduce
+
+// balanced parentheses
+
+var parseString = ")(())(";
+
+var balanced = parseString.split("").reduce(({balcount, isneg}, c) => {
+    if (c === '(') { balcount++}
+    if (c === ')') { balcount--}
+  	if (balcount <0 ) {isneg = true};
+    return {balcount, isneg}
+    
+}, {balcount:0, isneg: false}) ;
+
+
+function balancedMarks(parseString, leftchar, rightchar) {
+    return !parseString.split("").reduce((balcount, c) => {
+     		if (balcount < 0) { return balcount };      
+        if (c === leftchar) { return ++balcount }
+        if (c === rightchar) { return --balcount }
+   			return balcount;
+    }, 0);
+   }
+
+balancedMarks("(((())))", "(", ")")
+
 /*
 Use the 'reduce' helper to find the sum of all the distances traveled.  Assign the result to the variable 'totalDistance'
 */
