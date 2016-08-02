@@ -24,11 +24,12 @@ class Snake extends Monster {
 
     bite (anotherSnake) {
         anotherSnake.health -=10;
-        return anotherSnake.name + ' has now health '+ anotherSnake.health;
+        console.log( anotherSnake);
+        return anotherSnake;
     }
 
 }
 
 let slang1 = new Snake({name:'adder'});
 let slang2 = new Snake ({name:'tuinslang'});
-slang1.bite(slang2);
+slang1.bite(slang2.bite(slang2.bite(slang1.bite(slang2))));
